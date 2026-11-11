@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trilhas Virais Brasil — Áudios e Trends do TikTok</title>
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --panel: #14171c;
+        --panel-2: #1a1e25;
+        --line: #232830;
+        --ink: #e8eaed;
+        --muted: #8a93a0;
+        --accent: #ff3b6c;
+        --accent-2: #4ad1e0;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      header {
+        padding: 28px 32px 20px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      header .title h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: -0.01em; }
+      header .title .sub { color: var(--muted); font-size: 13px; }
+      header .badges { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      .badge {
+        font-size: 12px;
+        padding: 5px 12px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+      .badge.live::before {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        background: var(--accent-2);
+        border-radius: 50%;
+        margin-right: 7px;
+        vertical-align: middle;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+
+      main { padding: 20px 32px 64px; }
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+      }
+      .pill {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 7px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+      .pill.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+      }
+      input.search {
+        flex: 1;
+        min-width: 260px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        padding: 9px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+
+      /* Card grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: border-color 0.15s;
+      }
+      .card:hover { border-color: #3a4350; }
+      .card-top { display: flex; gap: 12px; align-items: flex-start; }
+      .card .rank {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        min-width: 32px;
+        padding-top: 0;
+      }
+      .card .cover {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+        background: var(--panel-2);
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+      .card .body { flex: 1; min-width: 0; }
+      .card .title {
+        font-weight: 600;
+        font-size: 14px;
+        margin: 0 0 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .card .artist {
+        color: var(--muted);
+        font-size: 12px;
+        margin: 0 0 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .card .uses {
+        color: var(--accent-2);
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .actions {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .actions .btn {
+        text-decoration: none;
+        font-size: 12px;
+        padding: 6px 11px;
+        border-radius: 6px;
+        background: var(--panel-2);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .actions .btn:hover { border-color: var(--accent); color: var(--accent); }
+      .actions .btn.play {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+        font-weight: 500;
+      }
+      .actions .btn.play:hover { filter: brightness(1.1); color: white; }
+      .actions .btn.ig { color: #e1306c; border-color: #4a2733; }
+      .actions .btn.ig:hover { background: #2a1620; color: #e1306c; }
+
+      /* Player modal */
+      dialog#player {
+        padding: 0;
+        background: #000;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        max-width: 760px;
+        width: 92vw;
+        position: relative;
+        overflow: visible;
+      }
+      dialog#player::backdrop { background: rgba(0, 0, 0, 0.75); }
+      dialog#player iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border: 0;
+        display: block;
+        border-radius: 12px;
+      }
+      #playerClose {
+        position: absolute;
+        top: -14px;
+        right: -14px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        color: var(--ink);
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        font-size: 16px;
+        line-height: 1;
+      }
+      #playerClose:hover { color: var(--accent); border-color: var(--accent); }
+      #playerCaption {
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .empty {
+        padding: 80px 20px;
+        text-align: center;
+        color: var(--muted);
+        background: var(--panel);
+        border: 1px dashed var(--line);
+        border-radius: 12px;
+      }
+      .empty h3 { color: var(--ink); margin: 0 0 6px; }
+
+      /* Top-level tabs */
+      .tabs {
+        display: flex;
+        gap: 4px;
+        margin: 0 32px;
+        border-bottom: 1px solid var(--line);
+      }
+      .tab {
+        background: transparent;
+        border: none;
+        color: var(--muted);
+        padding: 14px 18px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+      }
+      .tab:hover { color: var(--ink); }
+      .tab.active {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+
+      /* Trends sections */
+      .section {
+        margin-bottom: 32px;
+      }
+      .section h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+      .trend-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 12px;
+      }
+      .trend-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 12px;
+        display: flex;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--ink);
+        transition: border-color 0.15s;
+      }
+      .trend-card:hover { border-color: var(--accent); }
+      .trend-card .thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        background: var(--panel-2) center/cover no-repeat;
+        flex-shrink: 0;
+      }
+      .trend-card .body { min-width: 0; flex: 1; }
+      .trend-card .t {
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0 0 3px;
+        line-height: 1.35;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .trend-card .sub {
+        color: var(--muted);
+        font-size: 11px;
+        margin: 0 0 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .trend-card .meta {
+        font-size: 11px;
+        color: var(--accent-2);
+        font-variant-numeric: tabular-nums;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <h1 id="pageTitle">Trilhas Virais Brasil</h1>
+        <div class="sub" id="meta">Carregando…</div>
+      </div>
+      <div class="badges">
+        <span class="badge live" id="freshBadge">Atualiza a cada 4 horas</span>
+        <span class="badge" id="regionBadge">Região: Brasil</span>
+      </div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="sounds">🎵 Áudios</button>
+      <button class="tab" data-tab="trends">🔥 Trends</button>
+    </div>
+
+    <main>
+      <div id="panel-sounds">
+        <div class="controls">
+          <div id="pills" style="display: flex; gap: 8px;"></div>
+          <input class="search" id="search" placeholder="Buscar música ou artista…" />
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <h3>Nenhum áudio ainda</h3>
+          <p>Os dados são atualizados automaticamente a cada 4 horas pelo GitHub Actions.</p>
+        </div>
+      </div>
+
+      <div id="panel-trends" hidden>
+        <div id="trendsContainer">
+          <div class="empty">Carregando trends…</div>
+        </div>
+      </div>
+    </main>
+
+
+    <script>
+      let DATA = { sounds: [], scraped_at: "" };
+      let period = 7;
+      let query = "";
+
+      const fmt = (n) => {
+        n = Number(n) || 0;
+        if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+        if (n >= 1e3) return (n / 1e3).toFixed(1) + "K";
+        return String(n);
+      };
+
+      // Strip co-artists / featurings so the search isn't over-constrained.
+      // "YN Jay & Louie Ray" -> "YN Jay"
+      // "Doja Cat feat. SZA"  -> "Doja Cat"
+      // "Drake, 21 Savage"    -> "Drake"
+      function primaryArtist(a) {
+        return String(a || "")
+          .split(/\s+(?:&|feat\.?|ft\.?|x|,|;|with|和|\+)\s+/i)[0]
+          .trim();
+      }
+
+      // Strip parentheticals (e.g. "(From "Euphoria"...)" / "(Remastered)") and
+      // any internal quotes — keeps the searchable hook clean.
+      function cleanTitle(t) {
+        return String(t || "")
+          .replace(/\s*\([^)]*\)\s*/g, " ")
+          .replace(/\s*\[[^\]]*\]\s*/g, " ")
+          .replace(/["']/g, "")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      // Broader Google query: drop the narrow /reels/audio path filter so
+      // IG reel posts that USE the sound also rank.
+      const igSearch = (s) => {
+        const q = `"${cleanTitle(s.title)}" ${primaryArtist(s.artist)} site:instagram.com/reels`;
+        return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
+      };
+
+      // Direct IG keyword search — useful as a fallback that the user can run inside IG.
+      const igDirect = (s) =>
+        `https://www.instagram.com/explore/search/keyword/?q=${encodeURIComponent(
+          cleanTitle(s.title) + " " + primaryArtist(s.artist)
+        )}`;
+
+      function escape(s) {
+        return String(s || "").replace(
+          /[&<>"']/g,
+          (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]
+        );
+      }
+
+      function activeSounds() {
+        // For the "Áudios em alta" pill (period=7) tokchart only exposes
+        // 10 free rows. Top up with the highest-ranked sounds from the
+        // "Músicas em alta" lens (period=30) so the user sees ~20 entries.
+        const primary = DATA.sounds.filter((s) => s.period_days === period);
+        if (period !== 7) return primary;
+        const seen = new Set(primary.map((s) => s.clip_id));
+        const topUp = DATA.sounds
+          .filter((s) => s.period_days === 30 && !seen.has(s.clip_id))
+          .sort((a, b) => (a.rank || 9999) - (b.rank || 9999))
+          .slice(0, 10);
+        return [...primary, ...topUp.map((s, i) => ({ ...s, rank: 11 + i }))];
+      }
+
+      function render() {
+        const grid = document.getElementById("grid");
+        const empty = document.getElementById("empty");
+        const q = query.toLowerCase();
+        const filtered = activeSounds()
+          .filter(
+            (s) =>
+              !q ||
+              (s.title || "").toLowerCase().includes(q) ||
+              (s.artist || "").toLowerCase().includes(q)
+          )
+          .sort((a, b) => (a.rank || 9999) - (b.rank || 9999));
+
+        grid.innerHTML = filtered
+          .map((s, idx) => {
+            const playQ = cleanTitle(s.title) + " " + primaryArtist(s.artist);
+            return `
+          <div class="card">
+            <div class="card-top">
+              <div class="rank">${s.rank || "—"}</div>
+              ${
+                s.cover
+                  ? `<img class="cover" src="${s.cover}" loading="lazy" alt="" />`
+                  : `<div class="cover"></div>`
+              }
+              <div class="body">
+                <div class="title" title="${escape(s.title)}">${escape(s.title) || "—"}</div>
+                <div class="artist" title="${escape(s.artist)}">${escape(s.artist) || "—"}</div>
+                ${s.tiktok_uses ? `<div class="uses">${fmt(s.tiktok_uses)} vídeos${s.tiktok_uses_24h ? ` · +${fmt(s.tiktok_uses_24h)}/dia` : ""}</div>` : ""}
+                ${s.genre ? `<div class="uses">${escape(s.genre)}</div>` : ""}
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn play" data-link="${escape(s.tiktok_link || "")}" title="Abrir o áudio no TikTok em uma janela">▶ Ouvir</button>
+              ${
+                s.tiktok_link
+                  ? `<a class="btn" href="${s.tiktok_link}" target="_blank" rel="noopener">TikTok ↗</a>`
+                  : ""
+              }
+              <a class="btn ig" href="${igSearch(s)}" target="_blank" rel="noopener" title="Buscar este áudio nos Reels do Instagram (via Google)">Achar no Instagram</a>
+            </div>
+          </div>`;
+          })
+          .join("");
+
+        document.querySelectorAll(".btn.play").forEach((b) =>
+          b.addEventListener("click", () => playSound(b.dataset.link))
+        );
+        grid.hidden = filtered.length === 0;
+        empty.hidden = filtered.length > 0;
+      }
+
+      function renderPills() {
+        const lenses = DATA.lenses || [
+          { period_days: 7, label: "Áudios em alta no Brasil" },
+          { period_days: 30, label: "Músicas em alta no Brasil" },
+        ];
+        if (!lenses.find((l) => l.period_days === period)) period = lenses[0].period_days;
+        document.getElementById("pills").innerHTML = lenses
+          .map(
+            (l) =>
+              `<button class="pill ${l.period_days === period ? "active" : ""}"
+                       data-period="${l.period_days}">${l.label}</button>`
+          )
+          .join("");
+        document.querySelectorAll(".pill").forEach((b) =>
+          b.addEventListener("click", () => {
+            period = Number(b.dataset.period);
+            renderPills();
+            render();
+          })
+        );
+      }
+      document.getElementById("search").addEventListener("input", (e) => {
+        query = e.target.value;
+        render();
+      });
+
+      // Open the TikTok music page (where the sound originates) in a small
+      // popup window. The page shows videos using the sound; clicking any
+      // one plays the audio. We don't iframe TikTok because they block it
+      // with X-Frame-Options.
+      function playSound(link) {
+        if (!link) return;
+        const w = 480, h = 820;
+        const left = Math.max(0, (screen.width - w) / 2);
+        const top = Math.max(0, (screen.height - h) / 2);
+        window.open(
+          link,
+          "soundPlayer",
+          `width=${w},height=${h},left=${left},top=${top},menubar=no,toolbar=no,location=no,status=no`
+        );
+      }
+
+      function relativeTime(iso) {
+        const t = new Date(iso).getTime();
+        const diff = (Date.now() - t) / 1000;
+        if (diff < 60) return "agora mesmo";
+        if (diff < 3600) return `há ${Math.round(diff / 60)} min`;
+        if (diff < 86400) return `há ${Math.round(diff / 3600)} h`;
+        return `há ${Math.round(diff / 86400)} dias`;
+      }
+
+      // ---- Tab switching ----
+      document.querySelectorAll(".tab").forEach((t) =>
+        t.addEventListener("click", () => {
+          document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
+          t.classList.add("active");
+          const tab = t.dataset.tab;
+          document.getElementById("panel-sounds").hidden = tab !== "sounds";
+          document.getElementById("panel-trends").hidden = tab !== "trends";
+          if (tab === "trends" && !window.__trendsLoaded) loadTrends();
+        })
+      );
+
+      // ---- Trends loader ----
+      function loadTrends() {
+        window.__trendsLoaded = true;
+        fetch("trends.json?_=" + Date.now())
+          .then((r) => r.json())
+          .then((d) => {
+            const c = document.getElementById("trendsContainer");
+            if (!d.sections || d.sections.length === 0) {
+              c.innerHTML = `<div class="empty"><h3>Nenhuma trend ainda</h3><p>A próxima atualização vai preencher esta aba.</p></div>`;
+              return;
+            }
+            const updated = relativeTime(d.scraped_at);
+            c.innerHTML =
+              `<div class="sub" style="color: var(--muted); margin-bottom: 18px; font-size: 13px;">Atualizado ${updated} · Fontes: Google Notícias, Reddit</div>` +
+              d.sections
+                .filter((s) => s.items && s.items.length)
+                .map(
+                  (s) => `
+                <div class="section">
+                  <h2>${escape(s.label)}</h2>
+                  <div class="trend-grid">
+                    ${s.items
+                      .map(
+                        (it) => `
+                        <a class="trend-card" href="${it.url}" target="_blank" rel="noopener">
+                          <div class="thumb" ${
+                            it.thumbnail
+                              ? `style="background-image: url('${it.thumbnail.replace(/'/g, "%27")}')"`
+                              : ""
+                          }></div>
+                          <div class="body">
+                            <div class="t">${escape(it.title)}</div>
+                            ${it.subtitle ? `<div class="sub">${escape(it.subtitle)}</div>` : ""}
+                            <div class="meta">${escape(it.source)} ${
+                              it.meta ? "· " + escape(it.meta) : ""
+                            }</div>
+                          </div>
+                        </a>`
+                      )
+                      .join("")}
+                  </div>
+                </div>`
+                )
+                .join("");
+          })
+          .catch((e) => {
+            document.getElementById("trendsContainer").innerHTML =
+              `<div class="empty"><h3>Não foi possível carregar as trends</h3><p>${escape(e.message)}</p></div>`;
+          });
+      }
+
+      fetch("trending.json?_=" + Date.now())
+        .then((r) => r.json())
+        .then((d) => {
+          DATA = d;
+          const total = d.sounds.length;
+          document.getElementById("meta").textContent =
+            `${total} trilhas monitoradas • Atualizado ${relativeTime(d.scraped_at)}`;
+          if (d.source) {
+            document.getElementById("regionBadge").textContent = "Brasil · fonte: " + d.source;
+          }
+          renderPills();
+          render();
+        })
+        .catch((e) => {
+          document.getElementById("meta").textContent = "Erro ao carregar os dados: " + e;
+        });
+    </script>
+  </body>
+</html>

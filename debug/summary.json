@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "lens": "\u00c1udios em alta no Brasil",
+      "rows": 10
+    },
+    {
+      "lens": "M\u00fasicas em alta no Brasil",
+      "rows": 10
+    }
+  ],
+  "total_rows": 20
+}
