@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-18T00:59:27.511846+00:00",
+  "scraped_at": "2026-11-18T10:14:27.646188+00:00",
   "region": "BR",
   "source": "tokchart.com",
   "count": 20,
@@ -20,14 +20,26 @@
       "artist": "de Mk77musiic",
       "genre": "",
       "clip_id": "7703308909716589313",
-      "tiktok_uses": 80000,
-      "tiktok_uses_24h": 18300,
+      "tiktok_uses": 91000,
+      "tiktok_uses_24h": 11300,
       "tiktok_link": "https://www.tiktok.com/music/-7703308909716589313",
       "cover": "https://assets.tokchart.com/images/sounds_data/cover/b7/b71547e2b46b0e50d5360af8414e160e76be759276685356c0889053e1512922.webp",
       "period_days": 7
     },
     {
       "rank": 2,
+      "title": "Kikadinha",
+      "artist": "MC BN ORIGINAL & FreesTyle Sounds🫟 & DJ VITIN 011🙉",
+      "genre": "",
+      "clip_id": "7683878349135710224",
+      "tiktok_uses": 22000,
+      "tiktok_uses_24h": 1100,
+      "tiktok_link": "https://www.tiktok.com/music/-7683878349135710224",
+      "cover": "https://assets.tokchart.com/images/sounds_data/cover/46/4640b8ec077b3335d72bb6551eee6e771378fe2160ad8d0747957ac8320a0f8c.webp",
+      "period_days": 7
+    },
+    {
+      "rank": 3,
       "title": "Áudio original",
       "artist": "de mitos.entretenimentomsc",
       "genre": "",
@@ -36,18 +48,6 @@
       "tiktok_uses_24h": 0,
       "tiktok_link": "https://www.tiktok.com/music/-7683314874784811797",
       "cover": "https://assets.tokchart.com/images/sounds_data/cover/33/33dc2c07ac5468bf77a815ab82b3279461145459f3e927926fcf4dc72993c072.webp",
-      "period_days": 7
-    },
-    {
-      "rank": 3,
-      "title": "Kikadinha",
-      "artist": "MC BN ORIGINAL & FreesTyle Sounds🫟 & DJ VITIN 011🙉",
-      "genre": "",
-      "clip_id": "7683878349135710224",
-      "tiktok_uses": 21000,
-      "tiktok_uses_24h": 2600,
-      "tiktok_link": "https://www.tiktok.com/music/-7683878349135710224",
-      "cover": "https://assets.tokchart.com/images/sounds_data/cover/46/4640b8ec077b3335d72bb6551eee6e771378fe2160ad8d0747957ac8320a0f8c.webp",
       "period_days": 7
     },
     {
@@ -64,62 +64,62 @@
     },
     {
       "rank": 5,
-      "title": "Áudio original",
-      "artist": "de Zé Felipe",
-      "genre": "",
-      "clip_id": "7702979419438074642",
-      "tiktok_uses": 71000,
-      "tiktok_uses_24h": 13400,
-      "tiktok_link": "https://www.tiktok.com/music/-7702979419438074642",
-      "cover": "https://assets.tokchart.com/images/sounds_data/cover/a0/a072cff5727d740a900edb2ef9609d0169d95f2d4adc6d3fc8310b017e6a828d.webp",
-      "period_days": 7
-    },
-    {
-      "rank": 6,
-      "title": "Stop The Wedding!",
-      "artist": "ashe",
-      "genre": "",
-      "clip_id": "Stop The Wedding!|ashe",
-      "tiktok_uses": 357000,
-      "tiktok_uses_24h": 2500,
-      "tiktok_link": "https://www.tiktok.com/search?q=Stop%20The%20Wedding%21%20ashe",
-      "cover": "https://assets.tokchart.com/images/sounds_data/cover/3c/3c7044efd9fda11eedc94755f02c7cbb7606637eb2ec82279428104962d92776.webp",
-      "period_days": 7
-    },
-    {
-      "rank": 7,
       "title": "Eu Preciso Te Ter (feat. GEANZINHO & Sam da ZN)",
       "artist": "Vitinho Na Base & Peso Produtora & Eo cifrão & MC WL da ZN",
       "genre": "",
       "clip_id": "7700055734139471878",
-      "tiktok_uses": 186000,
-      "tiktok_uses_24h": 4800,
+      "tiktok_uses": 188000,
+      "tiktok_uses_24h": 2400,
       "tiktok_link": "https://www.tiktok.com/music/-7700055734139471878",
       "cover": "https://assets.tokchart.com/images/sounds_data/cover/64/64407757133bc89c4c07dd0b6dee68f86141aa7f76a7f99a89fa21fef392d7c6.webp",
       "period_days": 7
     },
     {
-      "rank": 8,
+      "rank": 6,
       "title": "Fogo e Gasolina / Fala Baixinho",
       "artist": "Diggo",
       "genre": "",
       "clip_id": "7623452553648409362",
       "tiktok_uses": 15000,
-      "tiktok_uses_24h": 200,
+      "tiktok_uses_24h": 0,
       "tiktok_link": "https://www.tiktok.com/music/-7623452553648409362",
       "cover": "https://assets.tokchart.com/images/sounds_data/cover/9e/9ef4439d957cf26f193452d7e5035800c28119e1e82cd6ef91e2f81e26d1f72d.webp",
       "period_days": 7
     },
     {
+      "rank": 7,
+      "title": "Stop The Wedding!",
+      "artist": "ashe",
+      "genre": "",
+      "clip_id": "Stop The Wedding!|ashe",
+      "tiktok_uses": 367000,
+      "tiktok_uses_24h": 9700,
+      "tiktok_link": "https://www.tiktok.com/search?q=Stop%20The%20Wedding%21%20ashe",
+      "cover": "https://assets.tokchart.com/images/sounds_data/cover/3c/3c7044efd9fda11eedc94755f02c7cbb7606637eb2ec82279428104962d92776.webp",
+      "period_days": 7
+    },
+    {
+      "rank": 8,
+      "title": "Áudio original",
+      "artist": "de Zé Felipe",
+      "genre": "",
+      "clip_id": "7702979419438074642",
+      "tiktok_uses": 81000,
+      "tiktok_uses_24h": 9700,
+      "tiktok_link": "https://www.tiktok.com/music/-7702979419438074642",
+      "cover": "https://assets.tokchart.com/images/sounds_data/cover/a0/a072cff5727d740a900edb2ef9609d0169d95f2d4adc6d3fc8310b017e6a828d.webp",
+      "period_days": 7
+    },
+    {
       "rank": 9,
       "title": "Áudio original",
-      "artist": "de refusestoshine",
+      "artist": "de Ygor Bueno",
       "genre": "",
-      "clip_id": "7699628211054971668",
-      "tiktok_uses": 3466,
-      "tiktok_uses_24h": 302,
-      "tiktok_link": "https://www.tiktok.com/music/-7699628211054971668",
-      "cover": "https://assets.tokchart.com/images/sounds_data/cover/88/88fe5ec54d33cf83c5c33d72c47bf19477651cb614f35945fdedbd916c6aec91.webp",
+      "clip_id": "7645434766025132821",
+      "tiktok_uses": 11000,
+      "tiktok_uses_24h": 500,
+      "tiktok_link": "https://www.tiktok.com/music/-7645434766025132821",
+      "cover": "https://assets.tokchart.com/images/sounds_data/cover/13/13fa17096a5c42edf4a644ce9dd1cdf5049b87a9299e11f762316b8cbaa77a82.webp",
       "period_days": 7
     },
     {
@@ -129,7 +129,7 @@
       "genre": "",
       "clip_id": "7656183159284845329",
       "tiktok_uses": 169000,
-      "tiktok_uses_24h": 5200,
+      "tiktok_uses_24h": 400,
       "tiktok_link": "https://www.tiktok.com/music/-7656183159284845329",
       "cover": "https://assets.tokchart.com/images/sounds_data/cover/f1/f1cbb3c3580ce22c5e7fadb8d399dc4864207b7ab72edd276fe77fd9f662ff29.webp",
       "period_days": 7
@@ -148,14 +148,14 @@
     },
     {
       "rank": 2,
-      "title": "Stop The Wedding!",
-      "artist": "Ashe",
-      "genre": "Pop",
-      "clip_id": "Stop The Wedding!|Ashe",
+      "title": "Rechazame",
+      "artist": "Prince Royce",
+      "genre": "Salsa and Tropical",
+      "clip_id": "Rechazame|Prince Royce",
       "tiktok_uses": 0,
       "tiktok_uses_24h": 0,
-      "tiktok_link": "https://www.tiktok.com/search?q=Stop%20The%20Wedding%21%20Ashe",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1b/86/c9/1b86c988-03b8-ca21-10a5-0963d09f5bcf/075679561893.jpg/400x400cc.jpg",
+      "tiktok_link": "https://www.tiktok.com/search?q=Rechazame%20Prince%20Royce",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/c9/d0/14c9d02d-14a2-34a2-443d-db07a1c458b9/mzi.edetukuo.tif/400x400cc.jpg",
       "period_days": 30
     },
     {
@@ -172,30 +172,18 @@
     },
     {
       "rank": 4,
-      "title": "Rechazame",
-      "artist": "Prince Royce",
-      "genre": "Salsa and Tropical",
-      "clip_id": "Rechazame|Prince Royce",
+      "title": "Stop The Wedding!",
+      "artist": "Ashe",
+      "genre": "Pop",
+      "clip_id": "Stop The Wedding!|Ashe",
       "tiktok_uses": 0,
       "tiktok_uses_24h": 0,
-      "tiktok_link": "https://www.tiktok.com/search?q=Rechazame%20Prince%20Royce",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/14/c9/d0/14c9d02d-14a2-34a2-443d-db07a1c458b9/mzi.edetukuo.tif/400x400cc.jpg",
+      "tiktok_link": "https://www.tiktok.com/search?q=Stop%20The%20Wedding%21%20Ashe",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1b/86/c9/1b86c988-03b8-ca21-10a5-0963d09f5bcf/075679561893.jpg/400x400cc.jpg",
       "period_days": 30
     },
     {
       "rank": 5,
-      "title": "Ai Bebê",
-      "artist": "Zé Felipe, Felipe Amorim",
-      "genre": "Forró",
-      "clip_id": "Ai Bebê|Zé Felipe, Felipe Amorim",
-      "tiktok_uses": 0,
-      "tiktok_uses_24h": 0,
-      "tiktok_link": "https://www.tiktok.com/search?q=Ai%20Beb%C3%AA%20Z%C3%A9%20Felipe%2C%20Felipe%20Amorim",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c4/9c/56/c49c569d-d635-3ad6-6d45-6f6429b38547/196874958339.jpg/400x400cc.jpg",
-      "period_days": 30
-    },
-    {
-      "rank": 6,
       "title": "Nada Pra Fazer (Casa das P*)",
       "artist": "Mc GP, MC Meno K, Mc IG, Brenninho VJ",
       "genre": "Funk",
@@ -204,6 +192,18 @@
       "tiktok_uses_24h": 0,
       "tiktok_link": "https://www.tiktok.com/search?q=Nada%20Pra%20Fazer%20%28Casa%20das%20P%2A%29%20Mc%20GP%2C%20MC%20Meno%20K%2C%20Mc%20IG%2C%20Brenninho%20VJ",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cf/c7/df/cfc7df80-cd15-5755-1d26-b23cbd73eeae/1200214882686.jpg/400x400cc.jpg",
+      "period_days": 30
+    },
+    {
+      "rank": 6,
+      "title": "Ai Bebê",
+      "artist": "Zé Felipe, Felipe Amorim",
+      "genre": "Forró",
+      "clip_id": "Ai Bebê|Zé Felipe, Felipe Amorim",
+      "tiktok_uses": 0,
+      "tiktok_uses_24h": 0,
+      "tiktok_link": "https://www.tiktok.com/search?q=Ai%20Beb%C3%AA%20Z%C3%A9%20Felipe%2C%20Felipe%20Amorim",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c4/9c/56/c49c569d-d635-3ad6-6d45-6f6429b38547/196874958339.jpg/400x400cc.jpg",
       "period_days": 30
     },
     {
@@ -232,18 +232,6 @@
     },
     {
       "rank": 9,
-      "title": "Geme Baixo",
-      "artist": "MC Jvila, DJ Dael, Menor MC +1",
-      "genre": "Brazilian",
-      "clip_id": "Geme Baixo|MC Jvila, DJ Dael, Menor MC +1",
-      "tiktok_uses": 0,
-      "tiktok_uses_24h": 0,
-      "tiktok_link": "https://www.tiktok.com/search?q=Geme%20Baixo%20MC%20Jvila%2C%20DJ%20Dael%2C%20Menor%20MC%20%2B1",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/83/ab/e183ab10-9131-273e-10af-772cf5402a2b/1200220240135.jpg/400x400cc.jpg",
-      "period_days": 30
-    },
-    {
-      "rank": 10,
       "title": "Fogo e Gasolina / Fala Baixinho",
       "artist": "Diggo",
       "genre": "Latino",
@@ -252,6 +240,18 @@
       "tiktok_uses_24h": 0,
       "tiktok_link": "https://www.tiktok.com/search?q=Fogo%20e%20Gasolina%20/%20Fala%20Baixinho%20Diggo",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/a4/ab/17/a4ab17af-79be-101a-7229-206bc9c156c9/3579628.jpg/400x400cc.jpg",
+      "period_days": 30
+    },
+    {
+      "rank": 10,
+      "title": "Geme Baixo",
+      "artist": "MC Jvila, DJ Dael, Menor MC +1",
+      "genre": "Brazilian",
+      "clip_id": "Geme Baixo|MC Jvila, DJ Dael, Menor MC +1",
+      "tiktok_uses": 0,
+      "tiktok_uses_24h": 0,
+      "tiktok_link": "https://www.tiktok.com/search?q=Geme%20Baixo%20MC%20Jvila%2C%20DJ%20Dael%2C%20Menor%20MC%20%2B1",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/83/ab/e183ab10-9131-273e-10af-772cf5402a2b/1200220240135.jpg/400x400cc.jpg",
       "period_days": 30
     }
   ]
